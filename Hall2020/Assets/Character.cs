@@ -12,17 +12,12 @@ public class Character : MonoBehaviour
     [SerializeField] protected SliderController healthSlider;
     protected float currentHealth;
 
-    [Space]
-
-    [SerializeField] protected float attackSpeed = 3f;
-    [HideInInspector] public bool isAttacking = false;
-
     protected virtual void Awake() {
         healthSlider.SetMaxValue(maxHealth);
         currentHealth = maxHealth;
     }
 
-    protected void TakeDamage(float damage) {
+    public void TakeDamage(float damage) {
         currentHealth -= damage;
         healthSlider.SetValue(currentHealth);
 
@@ -31,7 +26,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    protected void Die() {
+    protected virtual void Die() {
         Destroy(this.gameObject);
     }
 }

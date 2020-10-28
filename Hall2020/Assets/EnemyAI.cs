@@ -3,10 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 using UnityEditorInternal;
+using System;
 
-public class EnemyAI : Character
-{
-    public Transform target;
+public class EnemyAI : Character {
+    public Character player;
+    private Collider2D playerCollider;
+    public Character monster;
+    private Collider2D monsterCollider;
+
+    public Character target;
+
+    public float damage = 5f;
+    public float engageDistance = 1f;
+    public float attackDistance = 1f;
+    public float attackCooldown = 1f;
+    private float lastAttackTime;
+
+    [Space]
 
     public float nextWaypointDistance = 3f;
 
@@ -18,8 +31,15 @@ public class EnemyAI : Character
     Rigidbody2D rb;
 
     [SerializeField] Transform enemyGFX;
+    [SerializeField] Transform alertCanvas;
 
     private void Start() {
+        playerCollider = player.GetComponent<Collider2D>();
+        monsterCollider = monster.GetComponent<Collider2D>();
+
+        target = monster;
+        lastAttackTime = 0f;
+
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -28,7 +48,14 @@ public class EnemyAI : Character
 
     private void UpdatePath() {
         if (seeker.IsDone()) {
-            seeker.StartPath(rb.position, target.position, OnPathComplete);
+            Vector2 targetPosition;
+            if (target == monster) {
+                targetPosition = monsterCollider.ClosestPoint(rb.position);
+            }
+            else {
+                targetPosition = playerCollider.ClosestPoint(rb.position);
+            }
+            seeker.StartPath(rb.position, targetPosition, OnPathComplete);
         }
     }
 
@@ -39,8 +66,46 @@ public class EnemyAI : Character
         }
     }
 
+    private void Update() {
+        float distanceToPlayer = Vector2.Distance(rb.position, player.transform.position);
+ 
+        if (distanceToPlayer <= engageDistance) {
+            alertCanvas.gameObject.SetActive(true);
+            ChangeTarget(player);
+        }
+        else {
+            alertCanvas.gameObject.SetActive(false);
+            ChangeTarget(monster);
+        }
+
+        float distanceToTarget;
+        if (target == monster) {
+            distanceToTarget = Vector2.Distance(monsterCollider.ClosestPoint(rb.position), rb.position);
+        }
+        else {
+            distanceToTarget = Vector2.Distance(playerCollider.ClosestPoint(rb.position), rb.position);
+        }
+
+        if (distanceToTarget <= attackDistance) {
+            if (lastAttackTime + attackCooldown <= Time.time) {
+                Attack();
+            }
+        }
+
+        Debug.Log(target);
+    }
+
+    private void Attack() {
+        lastAttackTime = Time.time;
+        target.TakeDamage(damage);
+    }
+
+    private void ChangeTarget(Character target) {
+        this.target = target;
+    }
+
     private void FixedUpdate() {
-        if (path == null) 
+        if (path == null)
             return;
 
         if (currentWaypoint >= path.vectorPath.Count) {
@@ -63,10 +128,10 @@ public class EnemyAI : Character
         }
 
         if (force.x >= 0.01) {
-            enemyGFX.localScale = new Vector3(-1f, 2f, 1f);
+            enemyGFX.localScale = new Vector3(-1f, enemyGFX.localScale.y, enemyGFX.localScale.z);
         }
         else if (force.x <= -0.01) {
-            enemyGFX.localScale = new Vector3(1f, 2f, 1f);
+            enemyGFX.localScale = new Vector3(1f, enemyGFX.localScale.y, enemyGFX.localScale.z);
         }
     }
 

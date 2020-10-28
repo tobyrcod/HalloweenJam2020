@@ -33,6 +33,10 @@ public class PlayerController : Character
     [SerializeField] private InventoryUI inventoryUI;
     [SerializeField] List<Item> startingItems;
 
+
+    [SerializeField] protected float attackSpeed = 3f;
+    [HideInInspector] public bool isAttacking = false;
+
     protected override void Awake() {
 
         base.Awake();
@@ -90,8 +94,6 @@ public class PlayerController : Character
 
     private void StartDigging() {
         if (!playerMovement.isMoving && !isAttacking && !isDigging) {
-            Debug.Log("Start Digging");
-
             isDigging = true;
 
             digProgess = 0f;
@@ -124,5 +126,9 @@ public class PlayerController : Character
         Vector2 diference = vec2 - vec1;
         float sign = (vec2.y < vec1.y) ? -1.0f : 1.0f;
         return Vector2.Angle(Vector2.right, diference) * sign;
+    }
+
+    protected override void Die() {
+        Debug.Log("Die");
     }
 }

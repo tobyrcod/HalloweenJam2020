@@ -23,11 +23,17 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Horizontal", playerInput.DirInput.x);
         anim.SetFloat("Vertical", playerInput.DirInput.y);
         anim.SetFloat("Magnitude", playerInput.DirInput.magnitude);
+        if (playerInput.RawDirInput.x == 0) {
+            anim.transform.localScale = new Vector3(0.1f, 0.1f, 1);
+        }
+        else {
+            anim.transform.localScale = new Vector3(playerInput.RawDirInput.x * -1 / 10, anim.transform.localScale.y, anim.transform.localScale.z);
+        }
 
         Move(playerInput.DirInput);
     }
 
-    private void Move(Vector3 input) {
+    public void Move(Vector3 input) {
         rb.velocity = new Vector2(input.x, input.y) * player.speed;
         isMoving = input.magnitude >= 0.001f;
     }

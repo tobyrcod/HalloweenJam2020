@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Weapon
+  - Path
+  - Home
   layers:
   - Default
   - TransparentFX
@@ -15,10 +17,10 @@ TagManager:
   - 
   - 
   - Collision
-  - 
-  - 
-  - 
-  - 
+  - Enemy Collision
+  - Player
+  - Flying Enemy
+  - Enemy
   - 
   - 
   - 

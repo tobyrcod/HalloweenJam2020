@@ -20,11 +20,13 @@ public class PlayerInput : MonoBehaviour
     public Vector2 MousePos;
 
     [HideInInspector] public Vector3 DirInput { get; private set; }
+    public Vector2 RawDirInput;
 
     // Update is called once per frame
     void Update()
     {
         DirInput = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
+        RawDirInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         MousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
         if (Input.GetKeyDown(KeyPlayerDig)) {
