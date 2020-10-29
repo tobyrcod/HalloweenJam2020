@@ -37,6 +37,10 @@ public class PlayerController : Character
     [SerializeField] protected float attackSpeed = 3f;
     [HideInInspector] public bool isAttacking = false;
 
+    //QUANTUMCOOKIE
+    public AudioClip gameMusic;
+    //QUANTUMCOOKIE
+    
     protected override void Awake() {
 
         base.Awake();
@@ -58,6 +62,8 @@ public class PlayerController : Character
         for (int i = 0; i < startingItems.Count; i++) {
             inventory.AddItem(startingItems[i]);
         }
+        
+        AudioManager.Instance.ChangeMusic(gameMusic);
     }
 
     private void Digging() {
