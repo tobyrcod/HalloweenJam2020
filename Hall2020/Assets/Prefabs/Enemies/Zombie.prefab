@@ -214,7 +214,7 @@ MonoBehaviour:
   engageDistance: 1
   attackDistance: 0.5
   attackCooldown: 1
-  nextWaypointDistance: 1
+  nextWaypointDistance: 0.2
   enemyGFX: {fileID: 3813375977259819790}
   alertCanvas: {fileID: 6848504785419762771}
 --- !u!50 &3813375976645113300

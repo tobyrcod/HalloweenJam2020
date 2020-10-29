@@ -3050,6 +3050,10 @@ PrefabInstance:
       propertyPath: monster
       value: 
       objectReference: {fileID: 1774983067}
+    - target: {fileID: 600661771606342479, guid: 8743a8d897427f24185f03af0e96c27d, type: 3}
+      propertyPath: nextWaypointDistance
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 600661771606342513, guid: 8743a8d897427f24185f03af0e96c27d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.15
@@ -3092,6 +3096,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 600661771606342513, guid: 8743a8d897427f24185f03af0e96c27d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 600661771606342516, guid: 8743a8d897427f24185f03af0e96c27d, type: 3}
+      propertyPath: startEndModifier.addPoints
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 600661771606342517, guid: 8743a8d897427f24185f03af0e96c27d, type: 3}
@@ -15223,6 +15231,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3090357557006061076, guid: 4d1b301dcf1d0614e86ea95e362a0aae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090357557006061077, guid: 4d1b301dcf1d0614e86ea95e362a0aae, type: 3}
+      propertyPath: m_LinearDrag
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3090357557006061078, guid: 4d1b301dcf1d0614e86ea95e362a0aae, type: 3}

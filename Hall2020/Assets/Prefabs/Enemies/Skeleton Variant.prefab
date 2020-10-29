@@ -77,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3813375976645113323, guid: 4d47b04a901ecc54b9d174262fe80e13, type: 3}
       propertyPath: nextWaypointDistance
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3813375977259819789, guid: 4d47b04a901ecc54b9d174262fe80e13, type: 3}
       propertyPath: m_Color.r

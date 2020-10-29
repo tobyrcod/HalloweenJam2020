@@ -15,6 +15,7 @@ public class EnemyAI : Character {
 
     public float damage = 5f;
     public float engageDistance = 1f;
+    public float disengadeDistance = 2f;
     public float attackDistance = 1f;
     public float attackCooldown = 1f;
     private float lastAttackTime;
@@ -61,8 +62,13 @@ public class EnemyAI : Character {
 
     void OnPathComplete(Path p) {
         if (!p.error) {
-            path = p;
-            currentWaypoint = 0;
+            if (p.vectorPath.Count == 2) {
+                Debug.Log("One Path");
+            }
+            else {
+                path = p;
+                currentWaypoint = 0;
+            }
         }
     }
 
@@ -73,7 +79,7 @@ public class EnemyAI : Character {
             alertCanvas.gameObject.SetActive(true);
             ChangeTarget(player);
         }
-        else {
+        else if (distanceToPlayer >= disengadeDistance) {
             alertCanvas.gameObject.SetActive(false);
             ChangeTarget(monster);
         }
@@ -87,17 +93,15 @@ public class EnemyAI : Character {
         }
 
         if (distanceToTarget <= attackDistance) {
-            if (lastAttackTime + attackCooldown <= Time.time) {
-                Attack();
-            }
+            Attack();
         }
-
-        Debug.Log(target);
     }
 
     private void Attack() {
-        lastAttackTime = Time.time;
-        target.TakeDamage(damage);
+        if (lastAttackTime + attackCooldown <= Time.time) {
+            lastAttackTime = Time.time;
+            target.TakeDamage(damage);
+        }
     }
 
     private void ChangeTarget(Character target) {
