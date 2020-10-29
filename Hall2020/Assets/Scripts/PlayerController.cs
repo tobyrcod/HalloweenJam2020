@@ -99,10 +99,10 @@ public class PlayerController : Character
                     }
                     else
                     {
-                        //UI UPDATE: Visual Effects and sound
+                        GameManager.Instance.GetComponent<GraveManager>().Collected(currentGrave.owner);
                     }
                     
-                    Debug.Log("Dug " + currentGrave.name);
+                    Debug.Log("Dug " + currentGrave.owner);
                     currentGrave.fresh = false;
                     
                     //Stop Digging

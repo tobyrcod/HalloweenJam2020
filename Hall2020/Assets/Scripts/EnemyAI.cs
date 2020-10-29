@@ -140,7 +140,7 @@ public class EnemyAI : Character {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
         if (collision.CompareTag("Weapon")) {
             Weapon weapon = collision.GetComponentInParent<Weapon>();
 
