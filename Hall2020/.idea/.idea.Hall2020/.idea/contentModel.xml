@@ -210,21 +210,24 @@
             <e p="UnityReferenceHelper.cs" t="Include" />
           </e>
         </e>
-        <e p="AudioManager.cs" t="Include" />
         <e p="Character.cs" t="Include" />
-        <e p="CrossFadeMusicManager.cs" t="Include" />
         <e p="EnemyAI.cs" t="Include" />
         <e p="EnemyGFX.cs" t="Include" />
         <e p="EnvironmentController.cs" t="Include" />
-        <e p="GameManager.cs" t="Include" />
-        <e p="GM_PauseMenu.cs" t="Include" />
-        <e p="GM_PauseUI.cs" t="Include" />
         <e p="Grid.cs" t="Include" />
         <e p="GridUI.cs" t="Include" />
         <e p="GridWorld.cs" t="Include" />
         <e p="MenuManager.cs" t="Include" />
         <e p="PlayerController.cs" t="Include" />
         <e p="PlayerInput.cs" t="Include" />
+        <e p="QuantumCookie" t="Include">
+          <e p="AudioManager.cs" t="Include" />
+          <e p="CrossFadeMusicManager.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
+          <e p="GM_PauseMenu.cs" t="Include" />
+          <e p="GM_PauseUI.cs" t="Include" />
+          <e p="Grave.cs" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="GameUtils.cs" t="Include" />
           <e p="Inventory.cs" t="Include" />

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.UI;
 using UnityEngine.UI;
 
 public class PlayerController : Character
@@ -40,6 +41,9 @@ public class PlayerController : Character
     //QUANTUMCOOKIE
     public AudioClip gameMusic;
     //QUANTUMCOOKIE
+
+    private bool withinGraveRange = false;
+    private Grave currentGrave = null;
     
     protected override void Awake() {
 
@@ -67,7 +71,6 @@ public class PlayerController : Character
     }
 
     private void Digging() {
-
         if (isDigging) {
             if (playerMovement.isMoving) {
                 StopDigging();
@@ -86,6 +89,9 @@ public class PlayerController : Character
                         inventory.AddItem(itemsToAdd[i]);
                     }
 
+                    Debug.Log("Dug " + currentGrave.name);
+                    currentGrave.fresh = false;
+                    
                     //Stop Digging
                     StopDigging();
                 }              
@@ -99,7 +105,10 @@ public class PlayerController : Character
     }
 
     private void StartDigging() {
-        if (!playerMovement.isMoving && !isAttacking && !isDigging) {
+        if (!playerMovement.isMoving && !isAttacking && !isDigging && currentGrave != null)
+        {
+            if (!currentGrave.fresh) return;
+            
             isDigging = true;
 
             digProgess = 0f;
@@ -136,5 +145,18 @@ public class PlayerController : Character
 
     protected override void Die() {
         Debug.Log("Die");
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.GetComponent<Grave>() != null)
+        {
+            currentGrave = other.GetComponent<Grave>();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        currentGrave = null;
     }
 }
