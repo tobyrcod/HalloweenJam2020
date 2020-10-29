@@ -63,7 +63,7 @@ public class EnemyAI : Character {
     void OnPathComplete(Path p) {
         if (!p.error) {
             if (p.vectorPath.Count == 2) {
-                Debug.Log("One Path");
+                //Debug.Log("One Path");
             }
             else {
                 path = p;

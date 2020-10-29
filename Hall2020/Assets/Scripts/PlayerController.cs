@@ -29,11 +29,11 @@ public class PlayerController : Character
 
     private PlayerInput playerInput;
     private PlayerMovement playerMovement;
+    private ItemHandler itemHandler;
 
-    private Inventory inventory;
-    [SerializeField] private InventoryUI inventoryUI;
-    [SerializeField] List<Item> startingItems;
-
+//    private Inventory inventory;
+//    [SerializeField] private InventoryUI inventoryUI;
+//    [SerializeField] List<Item> startingItems;
 
     [SerializeField] protected float attackSpeed = 3f;
     [HideInInspector] public bool isAttacking = false;
@@ -60,12 +60,14 @@ public class PlayerController : Character
 
         diggingCanvas = sliderDigProgress.transform.parent;
 
-        inventory = new Inventory(10);
-        inventoryUI.Init(inventory);
-
-        for (int i = 0; i < startingItems.Count; i++) {
-            inventory.AddItem(startingItems[i]);
-        }
+        itemHandler = GetComponent<ItemHandler>();
+        
+//        inventory = new Inventory(10);
+//        inventoryUI.Init(inventory);
+//
+//        for (int i = 0; i < startingItems.Count; i++) {
+//            inventory.AddItem(startingItems[i]);
+//        }
         
         AudioManager.Instance.ChangeMusic(gameMusic);
     }
@@ -82,13 +84,24 @@ public class PlayerController : Character
                 sliderDigProgress.SetValue(digProgess);
 
                 if (digProgess == 1f) {
-                    //Create Items to Pickup
-                    Item[] itemsToAdd = GameUtils.instance.GetRandomItems(1);
-                    //inventory.AddItem
-                    for (int i = 0; i < itemsToAdd.Length; i++) {
-                        inventory.AddItem(itemsToAdd[i]);
-                    }
+//                    //Create Items to Pickup
+//                    Item[] itemsToAdd = GameUtils.instance.GetRandomItems(1);
+//                    //inventory.AddItem
+//                    for (int i = 0; i < itemsToAdd.Length; i++) {
+//                        inventory.AddItem(itemsToAdd[i]);
+//                    }
 
+                    Item item = itemHandler.CollectRandomItem();
+
+                    if (item == null)
+                    {
+                        //POPUP: "This body is useless"
+                    }
+                    else
+                    {
+                        //UI UPDATE: Visual Effects and sound
+                    }
+                    
                     Debug.Log("Dug " + currentGrave.name);
                     currentGrave.fresh = false;
                     

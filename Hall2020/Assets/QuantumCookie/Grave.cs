@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class Grave : MonoBehaviour
 {
-    public string name;
+    public string owner;
     public bool fresh = true;
 }
