@@ -35,13 +35,13 @@ public class GraveManager : MonoBehaviour
 
         for (int i = 0; i < graves.Length; i++)
         {
-            graves[i].SetOwner(names[i % names.Length]);
+            graves[i].SetOwner(names[i]);
         }
 
         for (int i = 0; i < indices.Length; i++) indices[i] = i;
         Shuffle(indices);
 
-        for (int i = 0; i < 7; i++) donors[i] = names[indices[i]];
+        for (int i = 0; i < 7; i++) donors[i] = graves[indices[i]].owner;
         for (int i = 0; i < 7; i++) areCollected[i] = false;
         
         UpdateDonorsDisplay();
@@ -76,6 +76,17 @@ public class GraveManager : MonoBehaviour
     public bool HasItem()
     {
         return currentItem != null;
+    }
+
+    public Item CurrentItem()
+    {
+        return currentItem;
+    }
+    
+    public void FixedItem()
+    {
+        currentItem = null;
+        UpdateDonorsDisplay();
     }
 
     private void Shuffle(string[] arr)

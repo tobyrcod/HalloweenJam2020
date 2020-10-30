@@ -47,6 +47,11 @@ public class PlayerController : Character
 
     public Image inventoryDisplay;
     public Sprite blankSprite;
+
+    private bool nearMonster = false;
+    private bool isFixing = false;
+
+    public GameObject head, torso, arm1, arm2, hip, leg1, leg2;
     
     protected override void Awake() {
 
@@ -58,6 +63,10 @@ public class PlayerController : Character
         playerInput.OnDigKeyPressEvent += StartDigging;
         playerInput.OnDigKeyReleasedEvent += StopDigging;
         playerInput.OnDigKeyHeldEvent += Digging;
+        
+        playerInput.OnDigKeyPressEvent += StartFixing;
+        playerInput.OnDigKeyReleasedEvent += StopFixing;
+        playerInput.OnDigKeyHeldEvent += Fixing;
 
         playerInput.OnPrimaryKeyPressEvent += OnPrimaryKeyPress;
 
@@ -138,6 +147,71 @@ public class PlayerController : Character
         }
     }
 
+    private void StartFixing()
+    {
+        if (nearMonster && !playerMovement.isMoving && !isAttacking && !isFixing && graveManager.HasItem())
+        {
+            isFixing = true;
+
+            digProgess = 0f;
+            sliderDigProgress.SetValue(digProgess);
+            digSpeed = 1 / digTime;
+            diggingCanvas.gameObject.SetActive(true);
+        }
+    }
+
+    private void Fixing()
+    {
+        if (isFixing && graveManager.HasItem()) {
+            if (playerMovement.isMoving) {
+                StopFixing();
+            }
+            else {
+                digProgess += digSpeed * Time.deltaTime;
+                digProgess = Mathf.Min(1f, digProgess);
+
+                sliderDigProgress.SetValue(digProgess);
+
+                if (digProgess == 1f) {
+                    
+                    //TODO
+                    Debug.Log("Fixed part");
+
+
+                    switch (graveManager.CurrentItem().name)
+                    {
+                        case "Head": head.SetActive(true);
+                            break;
+                        case "Torso": torso.SetActive(true);
+                            break;
+                        case "Arm1": arm1.SetActive(true);
+                            break;
+                        case "Arm2": arm2.SetActive(true);
+                            break;
+                        case "Hip": hip.SetActive(true);
+                            break;
+                        case "Leg1": leg1.SetActive(true);
+                            break;
+                        case "Leg2": leg2.SetActive(true);
+                            break;
+                    }
+
+                    graveManager.FixedItem();
+                    inventoryDisplay.sprite = blankSprite;
+                    
+                    //Stop Fixing
+                    StopFixing();
+                }              
+            }
+        }
+    }
+
+    private void StopFixing()
+    {
+        isFixing = false;
+        diggingCanvas.gameObject.SetActive(false);
+    }
+
     private void OnPrimaryKeyPress() {
         if (!isDigging && !isAttacking) {
             //Attack
@@ -173,10 +247,21 @@ public class PlayerController : Character
         {
             currentGrave = other.GetComponent<Grave>();
         }
+        else if (other.CompareTag("Home"))
+        {
+            nearMonster = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        currentGrave = null;
+        if (other.GetComponent<Grave>() != null)
+        {
+            currentGrave = null;
+        }
+        else if (other.CompareTag("Home"))
+        {
+            nearMonster = false;
+        }
     }
 }

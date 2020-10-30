@@ -232,6 +232,7 @@
           <e p="Item.cs" t="Include" />
           <e p="ItemHandler.cs" t="Include" />
           <e p="MenuManager.cs" t="Include" />
+          <e p="MonsterBodyManager.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerInput.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
