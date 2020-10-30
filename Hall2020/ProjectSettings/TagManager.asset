@@ -22,8 +22,8 @@ TagManager:
   - Player
   - Flying Enemy
   - Enemy
-  - 
-  - 
+  - Grave
+  - Home
   - 
   - 
   - 
@@ -47,6 +47,9 @@ TagManager:
     locked: 0
   - name: Weapons
     uniqueID: 240603049
+    locked: 0
+  - name: Grave
+    uniqueID: 2051387667
     locked: 0
   - name: Default
     uniqueID: 0

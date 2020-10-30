@@ -382,6 +382,7 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 5144647449558558309}
+  icon: {fileID: 5144647450516400092}
 --- !u!1 &5144647451300000242
 GameObject:
   m_ObjectHideFlags: 0

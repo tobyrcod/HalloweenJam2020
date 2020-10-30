@@ -32,6 +32,11 @@ public class GameManager : MonoBehaviour
     public bool isGamePaused = false;
     public bool isGameOver = false;
 
+    [SerializeField] PlayerController player;
+    [SerializeField] Character monster;
+    [SerializeField] Transform enemyParent;
+    [SerializeField] GameObject zombiePrefab;
+    [SerializeField] GameObject batPrefab;
 
     public delegate void GeneralEvent();
 
@@ -48,5 +53,14 @@ public class GameManager : MonoBehaviour
     {
         isGamePaused = !isGamePaused;
         onTogglePause?.Invoke();
+    }
+
+    public GameObject CreateNewEnemy(bool isZombie, Vector2 spawnPosition) {
+        GameObject prefab = (isZombie) ? zombiePrefab : batPrefab;
+        EnemyAI newEnemy = Instantiate(prefab, spawnPosition, Quaternion.identity, enemyParent).GetComponent<EnemyAI>();
+        newEnemy.player = player;
+        newEnemy.monster = monster;
+
+        return newEnemy.gameObject;
     }
 }

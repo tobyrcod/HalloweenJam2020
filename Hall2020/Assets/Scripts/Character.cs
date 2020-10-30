@@ -17,13 +17,23 @@ public class Character : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(float damage) {
-        currentHealth -= damage;
+    public void ChangeHealth(float amount) {
+        currentHealth += amount;
         healthSlider.SetValue(currentHealth);
 
         if (currentHealth <= 0f) {
             Die();
         }
+    }
+
+    public int HealRandomAmount() {
+        int random = Random.Range(0, 11);
+        if (random >= 5) {
+            ChangeHealth(random);
+            return random;
+        }
+
+        return 0;
     }
 
     protected virtual void Die() {

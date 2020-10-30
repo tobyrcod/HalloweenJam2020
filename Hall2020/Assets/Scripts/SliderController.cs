@@ -8,6 +8,7 @@ public class SliderController : MonoBehaviour
     public Slider slider;
     public Gradient gradient;
     public Image fill;
+    public Image icon;
 
     public void SetValue(float value) {
         slider.value = value;

@@ -74,7 +74,15 @@ public class EnemyAI : Character {
 
     private void Update() {
         float distanceToPlayer = Vector2.Distance(rb.position, player.transform.position);
- 
+        float xOffsetFromTarget = ((Vector3)rb.position - target.transform.position).x;
+
+        if (xOffsetFromTarget >= 0.01) {
+            enemyGFX.localScale = new Vector3(1f, enemyGFX.localScale.y, enemyGFX.localScale.z);
+        }
+        else if (xOffsetFromTarget <= -0.01) {
+            enemyGFX.localScale = new Vector3(-1f, enemyGFX.localScale.y, enemyGFX.localScale.z);
+        }
+
         if (distanceToPlayer <= engageDistance) {
             alertCanvas.gameObject.SetActive(true);
             ChangeTarget(player);
@@ -100,7 +108,7 @@ public class EnemyAI : Character {
     private void Attack() {
         if (lastAttackTime + attackCooldown <= Time.time) {
             lastAttackTime = Time.time;
-            target.TakeDamage(damage);
+            target.ChangeHealth(-damage);
         }
     }
 
@@ -130,13 +138,6 @@ public class EnemyAI : Character {
         if (distance < nextWaypointDistance) {
             currentWaypoint++;
         }
-
-        if (force.x >= 0.01) {
-            enemyGFX.localScale = new Vector3(-1f, enemyGFX.localScale.y, enemyGFX.localScale.z);
-        }
-        else if (force.x <= -0.01) {
-            enemyGFX.localScale = new Vector3(1f, enemyGFX.localScale.y, enemyGFX.localScale.z);
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -151,7 +152,7 @@ public class EnemyAI : Character {
             rb.AddForce(force);
 
             //Damage
-            TakeDamage(weapon.damage);
+            ChangeHealth(-weapon.damage);
         }
     }
 }

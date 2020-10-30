@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.UI;
@@ -18,6 +19,12 @@ public class PlayerController : Character
     [SerializeField] SliderController sliderDigProgress;
     private float digProgess;
     private Transform diggingCanvas;
+
+    [Space]
+
+    [SerializeField] TextMeshProUGUI popUpText;
+    private Transform popUpCanvas { get { return popUpText.transform.parent; } }
+    [SerializeField] float enemySpawnDistance;
 
     [Space]
 
@@ -49,6 +56,10 @@ public class PlayerController : Character
     public Sprite blankSprite;
 
     private bool nearMonster = false;
+    [SerializeField] Gradient buildGradient;
+    [SerializeField] Sprite buildSprite;
+    [SerializeField] Gradient digGradient;
+    [SerializeField] Sprite digSprite;
     private bool isFixing = false;
 
     public GameObject head, torso, arm1, arm2, hip, leg1, leg2;
@@ -110,6 +121,12 @@ public class PlayerController : Character
                     if (item == null)
                     {
                         //POPUP: "This body is useless"
+                        int amount = HealRandomAmount();
+                        if (amount > 0) {
+                            popUpText.text = $"+{amount} Health";
+                            popUpCanvas.gameObject.SetActive(true);
+                            Invoke("ClosePopUp", 1f);
+                        }
                     }
                     else
                     {
@@ -128,7 +145,25 @@ public class PlayerController : Character
         }
     }
 
+    private void ClosePopUp() {
+        popUpCanvas.gameObject.SetActive(false);
+    }
+
     private void StopDigging() {
+
+        if (isDigging) {
+            int isZombie = UnityEngine.Random.Range(0, 2);
+
+            int xPos = 1;
+            int yPos = 1;
+            int rnd = UnityEngine.Random.Range(0, 2);
+            if (rnd == 1) xPos *= -1;
+            rnd = UnityEngine.Random.Range(0, 2);
+            if (rnd == 1) yPos *= -1;
+
+            GameManager.Instance.CreateNewEnemy(isZombie == 1, transform.position + new Vector3(xPos, yPos) * enemySpawnDistance);
+        }
+
         isDigging = false;
         diggingCanvas.gameObject.SetActive(false);
     }
@@ -137,7 +172,10 @@ public class PlayerController : Character
         if (!playerMovement.isMoving && !isAttacking && !isDigging && currentGrave != null && !graveManager.HasItem())
         {
             if (!currentGrave.fresh) return;
-            
+
+            sliderDigProgress.gradient = digGradient;
+            sliderDigProgress.icon.sprite = digSprite;
+
             isDigging = true;
 
             digProgess = 0f;
@@ -152,6 +190,9 @@ public class PlayerController : Character
         if (nearMonster && !playerMovement.isMoving && !isAttacking && !isFixing && graveManager.HasItem())
         {
             isFixing = true;
+
+            sliderDigProgress.gradient = buildGradient;
+            sliderDigProgress.icon.sprite = buildSprite;
 
             digProgess = 0f;
             sliderDigProgress.SetValue(digProgess);
