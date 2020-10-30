@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 709258696641427858}
   - component: {fileID: 5002269633634854583}
   - component: {fileID: 1175490989}
+  - component: {fileID: 338257571}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -48,6 +49,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGamePaused: 0
   isGameOver: 0
+  player: {fileID: 0}
+  monster: {fileID: 0}
+  enemyParent: {fileID: 0}
+  zombiePrefab: {fileID: 3813375976645113297, guid: 4d47b04a901ecc54b9d174262fe80e13, type: 3}
+  batPrefab: {fileID: 0}
 --- !u!114 &709258696641427858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,3 +91,110 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3beab866364761b4494519f3f5a8848f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  names:
+  - Gerarda
+  - Deana
+  - Hayley
+  - Wilfred
+  - 'Cynemaer '
+  - Stithulf
+  - Lona
+  - Eadwulf
+  - Wulfstan
+  - Lynn
+  - Radclif
+  - Elfrida
+  - Stuart
+  - Freya
+  - Sigfried
+  - Joe
+  - Beckett
+  - Dell
+  - Eofor
+  - Orlan
+  - Marjorie
+  - Thorley
+  - Alfreda
+  - Cam
+  - Kamden
+  - Melinda
+  - Osbert
+  - Algar
+  - Leofwine
+  - Haiden
+  - Cenric
+  - Alodie
+  - Rohesia
+  - Sandford
+  - Gerarda
+  - Whitney
+  - Kennard
+  - Irvette
+  - Lena
+  - Landyn
+  - Ceolmund
+  - Gytha
+  - Sigweard
+  - Clifton
+  - Halsey
+  - Tawnie
+  - Linley
+  - Candance
+  - Phineas
+  - Audie
+  - Vought
+  - Alden
+  - Irvette
+  - Lark
+  - Bliss
+  - Joyce
+  - Algar
+  - Brooklyn
+  - Edeva
+  - Alvena
+  - Winifred
+  - Chadwick
+  - Hilda
+  - Janice
+  - Heath
+  - Nelda
+  - Judd
+  - Lodema
+  - Tuesday
+  - Flyta
+  - Kaelyn
+  - Rovena
+  - Eden
+  - Edolie
+  - Norvella
+  - Truman
+  - Rylee
+  - Huxley
+  - Linda
+  - Wallace
+  items:
+  - {fileID: 11400000, guid: 103b7632ae184bf4990984e5828e6299, type: 2}
+  - {fileID: 11400000, guid: 7d6b3dca4516a084fb26817f72b64857, type: 2}
+  - {fileID: 11400000, guid: d4d616a5f85535749a442132f30de14b, type: 2}
+  - {fileID: 11400000, guid: 85223090c5a49b5479a415b05119cd09, type: 2}
+  - {fileID: 11400000, guid: 66bbdd179c0777d48a1ac026a3e1f320, type: 2}
+  - {fileID: 11400000, guid: bd64440b0fa6c6144b1bb812ee76d0c3, type: 2}
+  - {fileID: 11400000, guid: 32a3a77f260e34c4b931ee53d24fd08c, type: 2}
+  donorsRoot: {fileID: 0}
+--- !u!320 &338257571
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974184882212735158}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: d937fc3b12664204fa44ddece1e2733d, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []

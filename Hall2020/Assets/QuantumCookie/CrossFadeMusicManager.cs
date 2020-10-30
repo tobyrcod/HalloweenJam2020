@@ -32,7 +32,7 @@ public class CrossFadeMusicManager : MonoBehaviour
             if (diff == 0)
                 return;
             
-            float portion = Mathf.Abs(speed * Time.deltaTime / diff);
+            float portion = Mathf.Abs(speed * Time.unscaledTime / diff);
 
             src.volume = Mathf.Lerp(src.volume, targetVolume, portion);
         }

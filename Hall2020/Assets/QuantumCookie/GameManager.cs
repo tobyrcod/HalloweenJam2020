@@ -63,4 +63,9 @@ public class GameManager : MonoBehaviour
 
         return newEnemy.gameObject;
     }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(1);
+    }
 }

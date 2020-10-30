@@ -46,7 +46,7 @@ public class PlayerController : Character
     [HideInInspector] public bool isAttacking = false;
 
     //QUANTUMCOOKIE
-    public AudioClip gameMusic;
+    public AudioClip gameMusic, digClip, swingClip;
     //QUANTUMCOOKIE
 
     private bool withinGraveRange = false;
@@ -55,6 +55,8 @@ public class PlayerController : Character
     public Image inventoryDisplay;
     public Sprite blankSprite;
 
+    public Text objective;
+    
     private bool nearMonster = false;
     [SerializeField] Gradient buildGradient;
     [SerializeField] Sprite buildSprite;
@@ -84,6 +86,8 @@ public class PlayerController : Character
         diggingCanvas = sliderDigProgress.transform.parent;
 
         graveManager = GameManager.Instance.GetComponent<GraveManager>();
+
+        objective.text = "Objective: Dig up graves for parts to fix your monster";
         
 //        inventory = new Inventory(10);
 //        inventoryUI.Init(inventory);
@@ -99,6 +103,9 @@ public class PlayerController : Character
 
     private void Digging() {
         if (isDigging) {
+            
+            AudioManager.Instance.PlaySFX(digClip, transform.position);
+            
             if (playerMovement.isMoving) {
                 StopDigging();
             }
@@ -133,6 +140,9 @@ public class PlayerController : Character
                         Debug.Log(item);
                         graveManager.Collected(currentGrave.owner, item);
                         inventoryDisplay.sprite = item.icon;
+
+                        objective.text = "Objective: Attach the collected part to your monster!";
+                        objective.color = Color.green;
                     }
                     
                     Debug.Log("Dug " + currentGrave.owner);
@@ -239,6 +249,9 @@ public class PlayerController : Character
 
                     graveManager.FixedItem();
                     inventoryDisplay.sprite = blankSprite;
+                    
+                    objective.text = "Objective: Dig up graves for parts to fix your monster";
+                    objective.color = Color.white;
                     
                     //Stop Fixing
                     StopFixing();

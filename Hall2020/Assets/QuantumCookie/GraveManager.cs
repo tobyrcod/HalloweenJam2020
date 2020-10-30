@@ -54,7 +54,7 @@ public class GraveManager : MonoBehaviour
         for(int i = 0; i < 7; i++)
         {
             texts[i].text = donors[i];
-            texts[i].color = areCollected[i] ? Color.green : Color.black;
+            texts[i].color = areCollected[i] ? Color.green : Color.white;
         }
     }
 
