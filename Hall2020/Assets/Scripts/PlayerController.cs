@@ -29,7 +29,7 @@ public class PlayerController : Character
 
     private PlayerInput playerInput;
     private PlayerMovement playerMovement;
-    private ItemHandler itemHandler;
+    private GraveManager graveManager;
 
 //    private Inventory inventory;
 //    [SerializeField] private InventoryUI inventoryUI;
@@ -44,6 +44,9 @@ public class PlayerController : Character
 
     private bool withinGraveRange = false;
     private Grave currentGrave = null;
+
+    public Image inventoryDisplay;
+    public Sprite blankSprite;
     
     protected override void Awake() {
 
@@ -60,7 +63,7 @@ public class PlayerController : Character
 
         diggingCanvas = sliderDigProgress.transform.parent;
 
-        itemHandler = GetComponent<ItemHandler>();
+        graveManager = GameManager.Instance.GetComponent<GraveManager>();
         
 //        inventory = new Inventory(10);
 //        inventoryUI.Init(inventory);
@@ -68,6 +71,8 @@ public class PlayerController : Character
 //        for (int i = 0; i < startingItems.Count; i++) {
 //            inventory.AddItem(startingItems[i]);
 //        }
+
+        inventoryDisplay.sprite = blankSprite;
         
         AudioManager.Instance.ChangeMusic(gameMusic);
     }
@@ -91,7 +96,7 @@ public class PlayerController : Character
 //                        inventory.AddItem(itemsToAdd[i]);
 //                    }
 
-                    Item item = itemHandler.CollectRandomItem();
+                    Item item = graveManager.CollectRandomItem(currentGrave.owner);
 
                     if (item == null)
                     {
@@ -99,7 +104,9 @@ public class PlayerController : Character
                     }
                     else
                     {
-                        GameManager.Instance.GetComponent<GraveManager>().Collected(currentGrave.owner);
+                        Debug.Log(item);
+                        graveManager.Collected(currentGrave.owner);
+                        inventoryDisplay.sprite = item.icon;
                     }
                     
                     Debug.Log("Dug " + currentGrave.owner);

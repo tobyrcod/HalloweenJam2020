@@ -16,8 +16,6 @@ public class ItemHandler : MonoBehaviour
 
     public Item CollectRandomItem()
     {
-        if (Random.value > 0.25f) return null;
-
         int i = Random.Range(0, items.Count);
         items.RemoveAt(i);
         collected.Add(items[i]);

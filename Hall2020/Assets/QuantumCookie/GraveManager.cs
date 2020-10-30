@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,17 +8,23 @@ public class GraveManager : MonoBehaviour
 {
     public string[] names;
 
+
+    public List<Item> items;
+    private List<Item> collectedItems;
     private Grave[] graves;
     private string[] donors;
-    private bool[] collected;
+    private bool[] areCollected;
 
     public GameObject donorsRoot;
-    
+
+
     private void Awake()
     {
         graves = FindObjectsOfType<Grave>();
         donors = new string[7];
-        collected = new bool[7];
+        areCollected = new bool[7];
+        
+        collectedItems = new List<Item>(items.Count);
         
         ShuffleNames();
 
@@ -27,7 +34,7 @@ public class GraveManager : MonoBehaviour
         }
 
         for (int i = 0; i < 7; i++) donors[i] = names[Random.Range(0, names.Length)];
-        for (int i = 0; i < 7; i++) collected[i] = false;
+        for (int i = 0; i < 7; i++) areCollected[i] = false;
         
         UpdateDonorsDisplay();
     }
@@ -39,7 +46,7 @@ public class GraveManager : MonoBehaviour
         for(int i = 0; i < 7; i++)
         {
             texts[i].text = donors[i];
-            texts[i].color = collected[i] ? Color.green : Color.black;
+            texts[i].color = areCollected[i] ? Color.green : Color.black;
         }
     }
 
@@ -49,7 +56,7 @@ public class GraveManager : MonoBehaviour
         {
             if (str == donors[i])
             {
-                collected[i] = true;
+                areCollected[i] = true;
                 Debug.Log(("Collected"));
                 UpdateDonorsDisplay();
                 break;
@@ -67,5 +74,19 @@ public class GraveManager : MonoBehaviour
             names[i] = names[j];
             names[j] = t;
         }
+    }
+
+    public Item CollectRandomItem(string graveName)
+    {
+        if(donors.Contains(graveName))
+        {
+            int i = Random.Range(0, items.Count);
+            items.RemoveAt(i);
+            collectedItems.Add(items[i]);
+
+            return items[i];
+        }
+
+        return null;
     }
 }
