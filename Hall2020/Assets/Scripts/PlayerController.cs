@@ -105,7 +105,7 @@ public class PlayerController : Character
                     else
                     {
                         Debug.Log(item);
-                        graveManager.Collected(currentGrave.owner);
+                        graveManager.Collected(currentGrave.owner, item);
                         inventoryDisplay.sprite = item.icon;
                     }
                     
@@ -125,7 +125,7 @@ public class PlayerController : Character
     }
 
     private void StartDigging() {
-        if (!playerMovement.isMoving && !isAttacking && !isDigging && currentGrave != null)
+        if (!playerMovement.isMoving && !isAttacking && !isDigging && currentGrave != null && !graveManager.HasItem())
         {
             if (!currentGrave.fresh) return;
             

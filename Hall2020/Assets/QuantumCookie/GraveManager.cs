@@ -14,26 +14,34 @@ public class GraveManager : MonoBehaviour
     private Grave[] graves;
     private string[] donors;
     private bool[] areCollected;
+    private int[] indices;
 
     public GameObject donorsRoot;
 
+    private Item currentItem;
 
     private void Awake()
     {
         graves = FindObjectsOfType<Grave>();
+        indices = new int[graves.Length];
         donors = new string[7];
         areCollected = new bool[7];
-        
+
+        currentItem = null;
+
         collectedItems = new List<Item>(items.Count);
-        
-        ShuffleNames();
+
+        Shuffle(names);
 
         for (int i = 0; i < graves.Length; i++)
         {
             graves[i].SetOwner(names[i % names.Length]);
         }
 
-        for (int i = 0; i < 7; i++) donors[i] = names[Random.Range(0, names.Length)];
+        for (int i = 0; i < indices.Length; i++) indices[i] = i;
+        Shuffle(indices);
+
+        for (int i = 0; i < 7; i++) donors[i] = names[indices[i]];
         for (int i = 0; i < 7; i++) areCollected[i] = false;
         
         UpdateDonorsDisplay();
@@ -50,7 +58,7 @@ public class GraveManager : MonoBehaviour
         }
     }
 
-    public void Collected(string str)
+    public void Collected(string str, Item item)
     {
         for (int i = 0; i < 7; i++)
         {
@@ -58,21 +66,39 @@ public class GraveManager : MonoBehaviour
             {
                 areCollected[i] = true;
                 Debug.Log(("Collected"));
+                currentItem = item;
                 UpdateDonorsDisplay();
                 break;
             }
         }
     }
 
-    private void ShuffleNames()
+    public bool HasItem()
     {
-        for (int i = names.Length - 1; i > 0; i--)
+        return currentItem != null;
+    }
+
+    private void Shuffle(string[] arr)
+    {
+        for (int i = arr.Length - 1; i > 0; i--)
         {
             int j = Random.Range(0, i + 1);
             
-            string t = names[i];
-            names[i] = names[j];
-            names[j] = t;
+            string t = arr[i];
+            arr[i] = arr[j];
+            arr[j] = t;
+        }
+    }
+
+    private void Shuffle(int[] arr)
+    {
+        for (int i = arr.Length - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+
+            int t = arr[i];
+            arr[i] = arr[j];
+            arr[j] = t;
         }
     }
 
@@ -81,10 +107,11 @@ public class GraveManager : MonoBehaviour
         if(donors.Contains(graveName))
         {
             int i = Random.Range(0, items.Count);
+            Item item = items[i];
+            collectedItems.Add(item);
             items.RemoveAt(i);
-            collectedItems.Add(items[i]);
 
-            return items[i];
+            return item;
         }
 
         return null;
