@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
         } else {
             _instance = this;
         }
+        
+        Animprefix();
     }
     #endregion
 
@@ -54,8 +56,31 @@ public class GameManager : MonoBehaviour
 
     public void OnGameOver()
     {
+        Animhotfix();
+        
         isGameOver = true;
         onGameOver?.Invoke();
+    }
+
+    void Animprefix()
+    {
+        Animator[] anims = GameObject.FindObjectsOfType<Animator>();
+
+        for (int i = 0; i < anims.Length; i++)
+        {
+            if(anims[i].transform.root.CompareTag("Player") && !anims[i].gameObject.CompareTag("Player")) continue;
+            anims[i].enabled = false;
+        }
+    }
+    
+    void Animhotfix()
+    {
+        Animator[] anims = GameObject.FindObjectsOfType<Animator>();
+
+        for (int i = 0; i < anims.Length; i++)
+        {
+            anims[i].enabled = true;
+        }
     }
 
     public void OnTogglePause()
