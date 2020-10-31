@@ -217,6 +217,7 @@
         </e>
         <e p="QuantumCookie" t="Include">
           <e p="AudioManager.cs" t="Include" />
+          <e p="ConnectToAudioManager.cs" t="Include" />
           <e p="CrossFadeMusicManager.cs" t="Include" />
           <e p="DisableAnimator.cs" t="Include" />
           <e p="DisableOnGameOver.cs" t="Include" />

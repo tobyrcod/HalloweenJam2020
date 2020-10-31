@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         onGameOver += FinalDialogue;
-        OnGameOver();
+        //OnGameOver();
     }
 
     public void OnGameOver()

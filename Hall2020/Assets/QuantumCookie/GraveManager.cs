@@ -89,10 +89,11 @@ public class GraveManager : MonoBehaviour
         UpdateDonorsDisplay();
         fixedParts++;
 
-        if (fixedParts == 7) {
+        //if (fixedParts == 7) {
             //Monster is fully Fixed
-            GameManager.Instance.FinalDialogue();
-        }
+        GameManager.Instance.OnGameOver();
+            //GameManager.Instance.FinalDialogue();
+        //}
     }
 
     private void Shuffle(string[] arr)

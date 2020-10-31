@@ -4,19 +4,11 @@
     <list default="true" id="48f0a7e7-9be6-4308-8359-5509ba030cf5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hall2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hall2020/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hall2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hall2020/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/FuturaPTBook SDF.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/FuturaPTBook SDF.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Message Boxes/MessageBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Message Boxes/MessageBox.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Message Boxes/PopUpManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Message Boxes/PopUpManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Message Boxes/Prefabs/MessageBox.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Message Boxes/Prefabs/MessageBox.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Message Boxes/Prefabs/MessageBoxYES.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Message Boxes/Prefabs/MessageBoxYES.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuantumCookie/GM_PauseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/QuantumCookie/GM_PauseMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/End/FInalCanvas.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/End/FInalCanvas.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/End/player_warp.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/End/player_warp.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/QuantumCookie/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/QuantumCookie/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/QuantumCookie/GraveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/QuantumCookie/GraveManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Timeline/GameManagerTimeline.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Timeline/GameManagerTimeline.playable" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,134 +30,122 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="6291" />
+          <entry key="cs" value="6398" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="6291" />
+          <entry key="C#" value="6398" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cs" value="31" />
+          <entry key="cs" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="31" />
+          <entry key="C#" value="33" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="342" column="5" selection-start-line="342" selection-start-column="5" selection-end-line="342" selection-end-column="5" />
-              <folding>
-                <marker date="1604120686373" expanded="false" signature="6:188" ph="..." />
-                <marker date="1604120686373" expanded="true" signature="231:11046" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="992:1131" ph="/* private Inventory inventory; ... */" />
-                <marker date="1604120686373" expanded="true" signature="1989:3135" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="2815:3018" ph="/* inventory = new Inventory(10); ... */" />
-                <marker date="1604120686373" expanded="true" signature="3164:5144" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="3189:5138" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="3330:3376" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="3376:5128" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="3605:5100" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="3607:3927" ph="/* Create Items to Pickup ... */" />
-                <marker date="1604120686373" expanded="true" signature="4103:4303" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="4341:4462" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="4487:4861" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="5176:5232" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="5265:5860" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="5291:5728" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="5894:6451" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="6014:6445" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="6483:6938" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="6597:6932" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="6965:8620" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="7020:8614" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="7063:7108" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="7108:8604" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="7337:8576" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="7494:8196" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="8651:8740" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="8779:9643" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="8821:9637" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="9710:9876" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="9912:9984" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="10037:10269" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="10092:10168" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="10211:10263" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="10321:10531" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="10376:10429" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="10472:10525" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="10560:10602" ph="{...}" />
-                <marker date="1604120686373" expanded="true" signature="10632:11044" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/QuantumCookie/GraveManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+            <state relative-caret-position="560">
+              <caret line="93" column="42" selection-start-line="93" selection-start-column="42" selection-end-line="93" selection-end-column="42" />
               <folding>
-                <marker date="1604120027644" expanded="false" signature="6:119" ph="..." />
-                <marker date="1604120027644" expanded="true" signature="162:3047" ph="{...}" />
-                <marker date="1604120027644" expanded="true" signature="501:1156" ph="{...}" />
-                <marker date="1604120027644" expanded="true" signature="820:882" ph="{...}" />
-                <marker date="1604120027644" expanded="true" signature="1195:1451" ph="{...}" />
-                <marker date="1604120027644" expanded="true" signature="1312:1445" ph="{...}" />
-                <marker date="1604120027644" expanded="true" signature="1501:1813" ph="{...}" />
-                <marker date="1604120027644" expanded="true" signature="1543:1807" ph="{...}" />
-                <marker date="1604120027644" expanded="true" signature="1587:1797" ph="{...}" />
-                <marker date="1604120027644" expanded="true" signature="1840:1888" ph="{...}" />
-                <marker date="1604120027644" expanded="true" signature="1919:1959" ph="{...}" />
-                <marker date="1604120027644" expanded="true" signature="1992:2214" ph="{...}" />
-                <marker date="1604120027644" expanded="true" signature="2110:2208" ph="{...}" />
-                <marker date="1604120027644" expanded="true" signature="2254:2476" ph="{...}" />
-                <marker date="1604120027644" expanded="true" signature="2309:2470" ph="{...}" />
-                <marker date="1604120027644" expanded="true" signature="2513:2720" ph="{...}" />
-                <marker date="1604120027644" expanded="true" signature="2568:2714" ph="{...}" />
-                <marker date="1604120027644" expanded="true" signature="2773:3045" ph="{...}" />
-                <marker date="1604120027644" expanded="true" signature="2818:3017" ph="{...}" />
+                <marker date="1604129751998" expanded="false" signature="6:119" ph="..." />
+                <marker date="1604129751998" expanded="true" signature="162:3096" ph="{...}" />
+                <marker date="1604129751998" expanded="true" signature="501:1156" ph="{...}" />
+                <marker date="1604129751998" expanded="true" signature="820:882" ph="{...}" />
+                <marker date="1604129751998" expanded="true" signature="1195:1451" ph="{...}" />
+                <marker date="1604129751998" expanded="true" signature="1312:1445" ph="{...}" />
+                <marker date="1604129751998" expanded="true" signature="1501:1813" ph="{...}" />
+                <marker date="1604129751998" expanded="true" signature="1543:1807" ph="{...}" />
+                <marker date="1604129751998" expanded="true" signature="1587:1797" ph="{...}" />
+                <marker date="1604129751998" expanded="true" signature="1840:1888" ph="{...}" />
+                <marker date="1604129751998" expanded="true" signature="1919:1959" ph="{...}" />
+                <marker date="1604129751998" expanded="true" signature="1992:2263" ph="{...}" />
+                <marker date="1604129751998" expanded="true" signature="2089:2150" ph="/* if (fixedParts == 7) { ... */" />
+                <marker date="1604129751998" expanded="true" signature="2206:2257" ph="/* GameManager.Instance.FinalDialogue(); ... */" />
+                <marker date="1604129751998" expanded="true" signature="2303:2525" ph="{...}" />
+                <marker date="1604129751998" expanded="true" signature="2358:2519" ph="{...}" />
+                <marker date="1604129751998" expanded="true" signature="2562:2769" ph="{...}" />
+                <marker date="1604129751998" expanded="true" signature="2617:2763" ph="{...}" />
+                <marker date="1604129751998" expanded="true" signature="2822:3094" ph="{...}" />
+                <marker date="1604129751998" expanded="true" signature="2867:3066" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/QuantumCookie/AudioManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <marker date="1603947238357" expanded="false" signature="6:78" ph="..." />
+                <marker date="1603947238357" expanded="true" signature="121:2002" ph="{...}" />
+                <marker date="1603947238357" expanded="false" signature="128:872" ph="Singleton Boilerplate" />
+                <marker date="1603947238357" expanded="true" signature="241:548" ph="{...}" />
+                <marker date="1603947238357" expanded="true" signature="259:542" ph="{...}" />
+                <marker date="1603947238357" expanded="true" signature="578:857" ph="{...}" />
+                <marker date="1603947238357" expanded="true" signature="636:694" ph="{...}" />
+                <marker date="1603947238357" expanded="true" signature="1113:1162" ph="{...}" />
+                <marker date="1603947238357" expanded="true" signature="1221:1312" ph="{...}" />
+                <marker date="1603947238357" expanded="true" signature="1357:1473" ph="{...}" />
+                <marker date="1603947238357" expanded="true" signature="1528:1612" ph="{...}" />
+                <marker date="1603947238357" expanded="true" signature="1668:1749" ph="{...}" />
+                <marker date="1603947238357" expanded="true" signature="1807:1890" ph="{...}" />
+                <marker date="1603947238357" expanded="true" signature="1923:2000" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/QuantumCookie/ConnectToAudioManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <marker date="1604128753395" expanded="true" signature="6:100" ph="..." />
+                <marker date="1604128753395" expanded="true" signature="152:546" ph="{...}" />
+                <marker date="1604128753395" expanded="true" signature="179:544" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/QuantumCookie/GameManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+            <state relative-caret-position="720">
+              <caret line="51" column="10" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
               <folding>
-                <marker date="1604128305745" expanded="true" signature="6:184" ph="..." />
-                <marker date="1604128305745" expanded="true" signature="227:2984" ph="{...}" />
-                <marker date="1604128305745" expanded="true" signature="234:865" ph="Singleton Boilerplate" />
-                <marker date="1604128305745" expanded="true" signature="345:651" ph="{...}" />
-                <marker date="1604128305745" expanded="true" signature="363:645" ph="{...}" />
-                <marker date="1604128305745" expanded="true" signature="681:850" ph="{...}" />
-                <marker date="1604128305745" expanded="true" signature="739:797" ph="{...}" />
-                <marker date="1604128305745" expanded="true" signature="1316:1387" ph="{...}" />
-                <marker date="1604128305745" expanded="true" signature="1417:1486" ph="{...}" />
-                <marker date="1604128305745" expanded="true" signature="1519:1602" ph="{...}" />
-                <marker date="1604128305745" expanded="true" signature="1678:1985" ph="{...}" />
-                <marker date="1604128305745" expanded="true" signature="2012:2084" ph="{...}" />
-                <marker date="1604128305745" expanded="true" signature="2120:2303" ph="{...}" />
-                <marker date="1604128305745" expanded="true" signature="2354:2567" ph="{...}" />
-                <marker date="1604128305745" expanded="true" signature="2373:2460" ph="{...}" />
-                <marker date="1604128305745" expanded="true" signature="2460:2561" ph="{...}" />
-                <marker date="1604128305745" expanded="true" signature="2601:2899" ph="{...}" />
-                <marker date="1604128305745" expanded="true" signature="2676:2835" ph="/* Write this function to finish the game, this is triggered by the messgage box ... */" />
-                <marker date="1604128305745" expanded="true" signature="2935:2982" ph="{...}" />
+                <marker date="1604128810628" expanded="true" signature="6:184" ph="..." />
+                <marker date="1604128810628" expanded="true" signature="227:2986" ph="{...}" />
+                <marker date="1604128810628" expanded="true" signature="234:865" ph="Singleton Boilerplate" />
+                <marker date="1604128810628" expanded="true" signature="345:651" ph="{...}" />
+                <marker date="1604128810628" expanded="true" signature="363:645" ph="{...}" />
+                <marker date="1604128810628" expanded="true" signature="681:850" ph="{...}" />
+                <marker date="1604128810628" expanded="true" signature="739:797" ph="{...}" />
+                <marker date="1604128810628" expanded="true" signature="1316:1389" ph="{...}" />
+                <marker date="1604128810628" expanded="true" signature="1419:1488" ph="{...}" />
+                <marker date="1604128810628" expanded="true" signature="1521:1604" ph="{...}" />
+                <marker date="1604128810628" expanded="true" signature="1680:1987" ph="{...}" />
+                <marker date="1604128810628" expanded="true" signature="2014:2086" ph="{...}" />
+                <marker date="1604128810628" expanded="true" signature="2122:2305" ph="{...}" />
+                <marker date="1604128810628" expanded="true" signature="2356:2569" ph="{...}" />
+                <marker date="1604128810628" expanded="true" signature="2375:2462" ph="{...}" />
+                <marker date="1604128810628" expanded="true" signature="2462:2563" ph="{...}" />
+                <marker date="1604128810628" expanded="true" signature="2603:2901" ph="{...}" />
+                <marker date="1604128810628" expanded="true" signature="2678:2837" ph="/* Write this function to finish the game, this is triggered by the messgage box ... */" />
+                <marker date="1604128810628" expanded="true" signature="2937:2984" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -181,21 +161,6 @@
                 <marker date="1604118178286" expanded="true" signature="126:822" ph="{...}" />
                 <marker date="1604118178286" expanded="true" signature="205:482" ph="{...}" />
                 <marker date="1604118178286" expanded="true" signature="559:820" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Message Boxes/MessageBox.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <marker date="1604120068252" expanded="true" signature="6:54" ph="..." />
-                <marker date="1604120068252" expanded="true" signature="95:391" ph="{...}" />
-                <marker date="1604120068252" expanded="true" signature="224:266" ph="{...}" />
-                <marker date="1604120068252" expanded="true" signature="300:389" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -302,6 +267,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/QuantumCookie/DisableOnGameOver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/QuantumCookie/Grave.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/QuantumCookie/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/QuantumCookie/ConnectToAudioManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MonsterBodyManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/QuantumCookie/CrossFadeMusicManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameUtils.cs" root0="FORCE_HIGHLIGHTING" />
@@ -328,14 +294,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/MonsterBodyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/QuantumCookie/CrossFadeMusicManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Message Boxes/PopUpManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/QuantumCookie/GraveManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Message Boxes/MessageBox.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/QuantumCookie/GM_PauseMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/QuantumCookie/DisableAnimator.cs" />
         <option value="$PROJECT_DIR$/Assets/QuantumCookie/DisableOnGameOver.cs" />
+        <option value="$PROJECT_DIR$/Assets/QuantumCookie/ConnectToAudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/QuantumCookie/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/QuantumCookie/GraveManager.cs" />
       </list>
     </option>
   </component>
@@ -471,9 +438,6 @@
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/MenuManager.cs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/QuantumCookie/AudioManager.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/QuantumCookie/Grave.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -590,34 +554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/QuantumCookie/GraveManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
-          <folding>
-            <marker date="1604120027644" expanded="false" signature="6:119" ph="..." />
-            <marker date="1604120027644" expanded="true" signature="162:3047" ph="{...}" />
-            <marker date="1604120027644" expanded="true" signature="501:1156" ph="{...}" />
-            <marker date="1604120027644" expanded="true" signature="820:882" ph="{...}" />
-            <marker date="1604120027644" expanded="true" signature="1195:1451" ph="{...}" />
-            <marker date="1604120027644" expanded="true" signature="1312:1445" ph="{...}" />
-            <marker date="1604120027644" expanded="true" signature="1501:1813" ph="{...}" />
-            <marker date="1604120027644" expanded="true" signature="1543:1807" ph="{...}" />
-            <marker date="1604120027644" expanded="true" signature="1587:1797" ph="{...}" />
-            <marker date="1604120027644" expanded="true" signature="1840:1888" ph="{...}" />
-            <marker date="1604120027644" expanded="true" signature="1919:1959" ph="{...}" />
-            <marker date="1604120027644" expanded="true" signature="1992:2214" ph="{...}" />
-            <marker date="1604120027644" expanded="true" signature="2110:2208" ph="{...}" />
-            <marker date="1604120027644" expanded="true" signature="2254:2476" ph="{...}" />
-            <marker date="1604120027644" expanded="true" signature="2309:2470" ph="{...}" />
-            <marker date="1604120027644" expanded="true" signature="2513:2720" ph="{...}" />
-            <marker date="1604120027644" expanded="true" signature="2568:2714" ph="{...}" />
-            <marker date="1604120027644" expanded="true" signature="2773:3045" ph="{...}" />
-            <marker date="1604120027644" expanded="true" signature="2818:3017" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/QuantumCookie/GM_PauseMenu.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -661,24 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/QuantumCookie/CrossFadeMusicManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-          <folding>
-            <marker date="1604082802940" expanded="false" signature="6:78" ph="..." />
-            <marker date="1604082802940" expanded="true" signature="130:2341" ph="{...}" />
-            <marker date="1604082802940" expanded="true" signature="736:887" ph="{...}" />
-            <marker date="1604082802940" expanded="true" signature="964:1247" ph="{...}" />
-            <marker date="1604082802940" expanded="true" signature="1270:1869" ph="{...}" />
-            <marker date="1604082802940" expanded="true" signature="1468:1859" ph="{...}" />
-            <marker date="1604082802940" expanded="true" signature="1634:1698" ph="{...}" />
-            <marker date="1604082802940" expanded="true" signature="1907:2047" ph="{...}" />
-            <marker date="1604082802940" expanded="true" signature="2112:2335" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/QuantumCookie/DisableAnimator.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -718,30 +636,111 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/QuantumCookie/CrossFadeMusicManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+          <folding>
+            <marker date="1604082802940" expanded="false" signature="6:78" ph="..." />
+            <marker date="1604082802940" expanded="true" signature="130:2341" ph="{...}" />
+            <marker date="1604082802940" expanded="true" signature="736:887" ph="{...}" />
+            <marker date="1604082802940" expanded="true" signature="964:1247" ph="{...}" />
+            <marker date="1604082802940" expanded="true" signature="1270:1869" ph="{...}" />
+            <marker date="1604082802940" expanded="true" signature="1468:1859" ph="{...}" />
+            <marker date="1604082802940" expanded="true" signature="1634:1698" ph="{...}" />
+            <marker date="1604082802940" expanded="true" signature="1907:2047" ph="{...}" />
+            <marker date="1604082802940" expanded="true" signature="2112:2335" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/QuantumCookie/AudioManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1603947238357" expanded="false" signature="6:78" ph="..." />
+            <marker date="1603947238357" expanded="true" signature="121:2002" ph="{...}" />
+            <marker date="1603947238357" expanded="false" signature="128:872" ph="Singleton Boilerplate" />
+            <marker date="1603947238357" expanded="true" signature="241:548" ph="{...}" />
+            <marker date="1603947238357" expanded="true" signature="259:542" ph="{...}" />
+            <marker date="1603947238357" expanded="true" signature="578:857" ph="{...}" />
+            <marker date="1603947238357" expanded="true" signature="636:694" ph="{...}" />
+            <marker date="1603947238357" expanded="true" signature="1113:1162" ph="{...}" />
+            <marker date="1603947238357" expanded="true" signature="1221:1312" ph="{...}" />
+            <marker date="1603947238357" expanded="true" signature="1357:1473" ph="{...}" />
+            <marker date="1603947238357" expanded="true" signature="1528:1612" ph="{...}" />
+            <marker date="1603947238357" expanded="true" signature="1668:1749" ph="{...}" />
+            <marker date="1603947238357" expanded="true" signature="1807:1890" ph="{...}" />
+            <marker date="1603947238357" expanded="true" signature="1923:2000" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/QuantumCookie/ConnectToAudioManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <marker date="1604128753395" expanded="true" signature="6:100" ph="..." />
+            <marker date="1604128753395" expanded="true" signature="152:546" ph="{...}" />
+            <marker date="1604128753395" expanded="true" signature="179:544" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/QuantumCookie/GameManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+        <state relative-caret-position="720">
+          <caret line="51" column="10" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
           <folding>
-            <marker date="1604128305745" expanded="true" signature="6:184" ph="..." />
-            <marker date="1604128305745" expanded="true" signature="227:2984" ph="{...}" />
-            <marker date="1604128305745" expanded="true" signature="234:865" ph="Singleton Boilerplate" />
-            <marker date="1604128305745" expanded="true" signature="345:651" ph="{...}" />
-            <marker date="1604128305745" expanded="true" signature="363:645" ph="{...}" />
-            <marker date="1604128305745" expanded="true" signature="681:850" ph="{...}" />
-            <marker date="1604128305745" expanded="true" signature="739:797" ph="{...}" />
-            <marker date="1604128305745" expanded="true" signature="1316:1387" ph="{...}" />
-            <marker date="1604128305745" expanded="true" signature="1417:1486" ph="{...}" />
-            <marker date="1604128305745" expanded="true" signature="1519:1602" ph="{...}" />
-            <marker date="1604128305745" expanded="true" signature="1678:1985" ph="{...}" />
-            <marker date="1604128305745" expanded="true" signature="2012:2084" ph="{...}" />
-            <marker date="1604128305745" expanded="true" signature="2120:2303" ph="{...}" />
-            <marker date="1604128305745" expanded="true" signature="2354:2567" ph="{...}" />
-            <marker date="1604128305745" expanded="true" signature="2373:2460" ph="{...}" />
-            <marker date="1604128305745" expanded="true" signature="2460:2561" ph="{...}" />
-            <marker date="1604128305745" expanded="true" signature="2601:2899" ph="{...}" />
-            <marker date="1604128305745" expanded="true" signature="2676:2835" ph="/* Write this function to finish the game, this is triggered by the messgage box ... */" />
-            <marker date="1604128305745" expanded="true" signature="2935:2982" ph="{...}" />
+            <marker date="1604128810628" expanded="true" signature="6:184" ph="..." />
+            <marker date="1604128810628" expanded="true" signature="227:2986" ph="{...}" />
+            <marker date="1604128810628" expanded="true" signature="234:865" ph="Singleton Boilerplate" />
+            <marker date="1604128810628" expanded="true" signature="345:651" ph="{...}" />
+            <marker date="1604128810628" expanded="true" signature="363:645" ph="{...}" />
+            <marker date="1604128810628" expanded="true" signature="681:850" ph="{...}" />
+            <marker date="1604128810628" expanded="true" signature="739:797" ph="{...}" />
+            <marker date="1604128810628" expanded="true" signature="1316:1389" ph="{...}" />
+            <marker date="1604128810628" expanded="true" signature="1419:1488" ph="{...}" />
+            <marker date="1604128810628" expanded="true" signature="1521:1604" ph="{...}" />
+            <marker date="1604128810628" expanded="true" signature="1680:1987" ph="{...}" />
+            <marker date="1604128810628" expanded="true" signature="2014:2086" ph="{...}" />
+            <marker date="1604128810628" expanded="true" signature="2122:2305" ph="{...}" />
+            <marker date="1604128810628" expanded="true" signature="2356:2569" ph="{...}" />
+            <marker date="1604128810628" expanded="true" signature="2375:2462" ph="{...}" />
+            <marker date="1604128810628" expanded="true" signature="2462:2563" ph="{...}" />
+            <marker date="1604128810628" expanded="true" signature="2603:2901" ph="{...}" />
+            <marker date="1604128810628" expanded="true" signature="2678:2837" ph="/* Write this function to finish the game, this is triggered by the messgage box ... */" />
+            <marker date="1604128810628" expanded="true" signature="2937:2984" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/QuantumCookie/GraveManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="93" column="42" selection-start-line="93" selection-start-column="42" selection-end-line="93" selection-end-column="42" />
+          <folding>
+            <marker date="1604129751998" expanded="false" signature="6:119" ph="..." />
+            <marker date="1604129751998" expanded="true" signature="162:3096" ph="{...}" />
+            <marker date="1604129751998" expanded="true" signature="501:1156" ph="{...}" />
+            <marker date="1604129751998" expanded="true" signature="820:882" ph="{...}" />
+            <marker date="1604129751998" expanded="true" signature="1195:1451" ph="{...}" />
+            <marker date="1604129751998" expanded="true" signature="1312:1445" ph="{...}" />
+            <marker date="1604129751998" expanded="true" signature="1501:1813" ph="{...}" />
+            <marker date="1604129751998" expanded="true" signature="1543:1807" ph="{...}" />
+            <marker date="1604129751998" expanded="true" signature="1587:1797" ph="{...}" />
+            <marker date="1604129751998" expanded="true" signature="1840:1888" ph="{...}" />
+            <marker date="1604129751998" expanded="true" signature="1919:1959" ph="{...}" />
+            <marker date="1604129751998" expanded="true" signature="1992:2263" ph="{...}" />
+            <marker date="1604129751998" expanded="true" signature="2089:2150" ph="/* if (fixedParts == 7) { ... */" />
+            <marker date="1604129751998" expanded="true" signature="2206:2257" ph="/* GameManager.Instance.FinalDialogue(); ... */" />
+            <marker date="1604129751998" expanded="true" signature="2303:2525" ph="{...}" />
+            <marker date="1604129751998" expanded="true" signature="2358:2519" ph="{...}" />
+            <marker date="1604129751998" expanded="true" signature="2562:2769" ph="{...}" />
+            <marker date="1604129751998" expanded="true" signature="2617:2763" ph="{...}" />
+            <marker date="1604129751998" expanded="true" signature="2822:3094" ph="{...}" />
+            <marker date="1604129751998" expanded="true" signature="2867:3066" ph="{...}" />
           </folding>
         </state>
       </provider>
