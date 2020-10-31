@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
-using UnityEditorInternal;
 using System;
 
 public class EnemyAI : Character {
