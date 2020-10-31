@@ -65,7 +65,7 @@ public class GraveManager : MonoBehaviour
             if (str == donors[i])
             {
                 areCollected[i] = true;
-                Debug.Log(("Collected"));
+                //Debug.Log(("Collected"));
                 currentItem = item;
                 UpdateDonorsDisplay();
                 break;

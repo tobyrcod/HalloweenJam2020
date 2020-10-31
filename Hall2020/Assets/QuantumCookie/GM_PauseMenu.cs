@@ -11,7 +11,7 @@ public class GM_PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape) && !GameManager.Instance.isGameOver)
         {
             GameManager.Instance.OnTogglePause();
             Debug.Log("Pause Toggled");

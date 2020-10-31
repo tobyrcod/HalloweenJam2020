@@ -1,10 +1,10 @@
 ﻿using System;
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MessageBox : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI txtMessage;
+    [SerializeField] Text txtMessage;
 
     public Action<bool> OnMessageBoxClosedEvent;
 

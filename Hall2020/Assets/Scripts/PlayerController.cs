@@ -93,6 +93,8 @@ public class PlayerController : Character
 
         playerInput.OnPrimaryKeyPressEvent += OnPrimaryKeyPress;
 
+        GameManager.Instance.onGameOver += GameOver;
+        
         diggingCanvas = sliderDigProgress.transform.parent;
 
         graveManager = GameManager.Instance.GetComponent<GraveManager>();
@@ -183,7 +185,7 @@ public class PlayerController : Character
             rnd = UnityEngine.Random.Range(0, 2);
             if (rnd == 1) yPos *= -1;
 
-            GameManager.Instance.CreateNewEnemy(isZombie == 1, transform.position + new Vector3(xPos, yPos) * enemySpawnDistance);
+            //GameManager.Instance.CreateNewEnemy(isZombie == 1, transform.position + new Vector3(xPos, yPos) * enemySpawnDistance);
         }
 
         shovelIcon.gameObject.SetActive(true);
@@ -333,5 +335,23 @@ public class PlayerController : Character
         {
             nearMonster = false;
         }
+    }
+
+    private void GameOver()
+    {
+        this.enabled = false;
+    }
+
+    private void OnDisable()
+    {
+        playerInput.OnDigKeyPressEvent -= StartDigging;
+        playerInput.OnDigKeyReleasedEvent -= StopDigging;
+        playerInput.OnDigKeyHeldEvent -= Digging;
+        
+        playerInput.OnDigKeyPressEvent -= StartFixing;
+        playerInput.OnDigKeyReleasedEvent -= StopFixing;
+        playerInput.OnDigKeyHeldEvent -= Fixing;
+
+        playerInput.OnPrimaryKeyPressEvent -= OnPrimaryKeyPress;
     }
 }

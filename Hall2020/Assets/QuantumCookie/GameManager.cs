@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
+using UnityEngine.Timeline;
 
 public class GameManager : MonoBehaviour 
 {
@@ -27,8 +29,6 @@ public class GameManager : MonoBehaviour
         } else {
             _instance = this;
         }
-
-        FinalDialogue();
     }
     #endregion
 
@@ -45,7 +45,13 @@ public class GameManager : MonoBehaviour
 
     public event GeneralEvent onTogglePause;
     public event GeneralEvent onGameOver;
-    
+
+    private void Start()
+    {
+        onGameOver += FinalDialogue;
+        OnGameOver();
+    }
+
     public void OnGameOver()
     {
         isGameOver = true;
@@ -58,7 +64,8 @@ public class GameManager : MonoBehaviour
         onTogglePause?.Invoke();
     }
 
-    public GameObject CreateNewEnemy(bool isZombie, Vector2 spawnPosition) {
+    public GameObject CreateNewEnemy(bool isZombie, Vector2 spawnPosition)
+    {
         GameObject prefab = (isZombie) ? zombiePrefab : batPrefab;
         EnemyAI newEnemy = Instantiate(prefab, spawnPosition, Quaternion.identity, enemyParent).GetComponent<EnemyAI>();
         newEnemy.player = player;
@@ -69,8 +76,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
-        Time.timeScale = 1f;
-        isGamePaused = false;
+        OnTogglePause();
         SceneManager.LoadScene(1);
     }
 
@@ -78,20 +84,31 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         isGamePaused = true;
 
-        PopUpManager.NewMessageBox(DealWithQuestionResult).Show("Will you make the final sacrifice, your own soul");
+        PopUpManager.NewMessageBox(DealWithQuestionResult).Show("Proceed to give life, to your Ultimate Creation?");
     }
 
     public void DealWithQuestionResult(bool yes) {
         if (yes) {
-            PopUpManager.NewMessage(End).Show("That was a mistake");
+            PopUpManager.NewMessage(End).Show("No, wait, that was a mis-");
         }
         else {
-            PopUpManager.NewMessage(End).Show("I'm going to take it anyway");
+            PopUpManager.NewMessage(End).Show("I'm going to do it anyway");
         }
     }
 
-    public void End(bool IGNORE) {
+    public void End(bool IGNORE)
+    {
+        Time.timeScale = 1f;
+        isGamePaused = false;
+
         //Write this function to finish the game, this is triggered by the messgage box
         //You can ignore the parameter im just too lazy right now to remove it!
+        
+        GetComponent<PlayableDirector>().Play();
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

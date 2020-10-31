@@ -6,7 +6,7 @@ using UnityEngine;
 public static class PopUpManager
 {
     public static MessageBox NewMessageBox(Action<bool> OnMessageBoxClosed) {       
-        MessageBox msgBox = GameObject.Instantiate(PopUpManagerMain.instance.prbMessageBox, PopUpManagerMain.instance.canvas.transform).GetComponent<MessageBox>();
+            MessageBox msgBox = GameObject.Instantiate(PopUpManagerMain.instance.prbMessageBox, PopUpManagerMain.instance.canvas.transform).GetComponent<MessageBox>();
 
         msgBox.OnMessageBoxClosedEvent += OnMessageBoxClosed;
         

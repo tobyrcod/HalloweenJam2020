@@ -210,9 +210,16 @@
             <e p="UnityReferenceHelper.cs" t="Include" />
           </e>
         </e>
+        <e p="Message Boxes" t="Include">
+          <e p="MessageBox.cs" t="Include" />
+          <e p="PopUpManager.cs" t="Include" />
+          <e p="PopUpManagerMain.cs" t="Include" />
+        </e>
         <e p="QuantumCookie" t="Include">
           <e p="AudioManager.cs" t="Include" />
           <e p="CrossFadeMusicManager.cs" t="Include" />
+          <e p="DisableAnimator.cs" t="Include" />
+          <e p="DisableOnGameOver.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="GM_PauseMenu.cs" t="Include" />
           <e p="GM_PauseUI.cs" t="Include" />
@@ -232,12 +239,14 @@
           <e p="Item.cs" t="Include" />
           <e p="ItemHandler.cs" t="Include" />
           <e p="MenuManager.cs" t="Include" />
+          <e p="Monster.cs" t="Include" />
           <e p="MonsterBodyManager.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerInput.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
           <e p="ShovelMeleeController.cs" t="Include" />
           <e p="SliderController.cs" t="Include" />
+          <e p="Spawner.cs" t="Include" />
           <e p="Ui" t="Include">
             <e p="Inventory" t="Include">
               <e p="InventoryUI.cs" t="Include" />
