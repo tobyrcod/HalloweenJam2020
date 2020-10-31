@@ -153,6 +153,8 @@ public class EnemyAI : Character {
 
             //Damage
             ChangeHealth(-weapon.damage);
+
+            AudioManager.Instance.PlaySFX(weapon.hit);
         }
     }
 }

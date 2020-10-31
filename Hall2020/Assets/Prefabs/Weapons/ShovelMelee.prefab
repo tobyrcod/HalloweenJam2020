@@ -69,6 +69,7 @@ MonoBehaviour:
   damageFlat: 30
   knockbackFlat: 100
   player: {fileID: 0}
+  hit: {fileID: 8300000, guid: db1b5cfa1bc06644bbe64e403b0d3d92, type: 3}
   anim: {fileID: 1369025865781761046}
 --- !u!1 &4865638410860862820
 GameObject:
@@ -140,7 +141,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 240603049
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1644dd4e089cda14ebe6b46aaae29628, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

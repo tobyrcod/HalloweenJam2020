@@ -14,6 +14,7 @@ public class Weapon : MonoBehaviour
     public float knockback{ get { return knockbackFlat * knockbackMult; } }
 
     public PlayerController player;
+    public AudioClip hit;
 
     public virtual void Init(PlayerController player) {
         this.player = player;

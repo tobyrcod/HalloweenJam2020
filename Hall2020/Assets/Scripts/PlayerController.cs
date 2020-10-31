@@ -64,7 +64,17 @@ public class PlayerController : Character
     [SerializeField] Sprite digSprite;
     private bool isFixing = false;
 
+    [Space] 
+    
+    [SerializeField] Transform shovelIcon;
+
+    [Space]
+
     public GameObject head, torso, arm1, arm2, hip, leg1, leg2;
+
+    [Space]
+
+    public GameObject diedCancas;
     
     protected override void Awake() {
 
@@ -125,15 +135,16 @@ public class PlayerController : Character
 
                     Item item = graveManager.CollectRandomItem(currentGrave.owner);
 
+                    int amount = HealRandomAmount();
+                    if (amount > 0) {
+                        popUpText.text = $"+{amount} Health";
+                        popUpCanvas.gameObject.SetActive(true);
+                        Invoke("ClosePopUp", 1f);
+
+                    }
                     if (item == null)
                     {
-                        //POPUP: "This body is useless"
-                        int amount = HealRandomAmount();
-                        if (amount > 0) {
-                            popUpText.text = $"+{amount} Health";
-                            popUpCanvas.gameObject.SetActive(true);
-                            Invoke("ClosePopUp", 1f);
-                        }
+                        //POPUP: "This body is useless"                     
                     }
                     else
                     {
@@ -147,6 +158,7 @@ public class PlayerController : Character
                     
                     Debug.Log("Dug " + currentGrave.owner);
                     currentGrave.fresh = false;
+
                     
                     //Stop Digging
                     StopDigging();
@@ -174,6 +186,7 @@ public class PlayerController : Character
             GameManager.Instance.CreateNewEnemy(isZombie == 1, transform.position + new Vector3(xPos, yPos) * enemySpawnDistance);
         }
 
+        shovelIcon.gameObject.SetActive(true);
         isDigging = false;
         diggingCanvas.gameObject.SetActive(false);
     }
@@ -182,6 +195,8 @@ public class PlayerController : Character
         if (!playerMovement.isMoving && !isAttacking && !isDigging && currentGrave != null && !graveManager.HasItem())
         {
             if (!currentGrave.fresh) return;
+
+            shovelIcon.gameObject.SetActive(false);
 
             sliderDigProgress.gradient = digGradient;
             sliderDigProgress.icon.sprite = digSprite;
@@ -292,7 +307,8 @@ public class PlayerController : Character
     }
 
     protected override void Die() {
-        Debug.Log("Die");
+        diedCancas.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

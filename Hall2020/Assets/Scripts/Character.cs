@@ -28,8 +28,8 @@ public class Character : MonoBehaviour
 
     public int HealRandomAmount() {
         int random = Random.Range(0, 11);
-        if (random >= 5) {
-            ChangeHealth(random);
+        if (random >= 3) {
+            ChangeHealth(random * 2);
             return random;
         }
 

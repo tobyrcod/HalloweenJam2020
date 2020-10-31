@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour
         } else {
             _instance = this;
         }
+
+        FinalDialogue();
     }
     #endregion
 
@@ -66,6 +69,29 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        Time.timeScale = 1f;
+        isGamePaused = false;
         SceneManager.LoadScene(1);
+    }
+
+    internal void FinalDialogue() {
+        Time.timeScale = 0f;
+        isGamePaused = true;
+
+        PopUpManager.NewMessageBox(DealWithQuestionResult).Show("Will you make the final sacrifice, your own soul");
+    }
+
+    public void DealWithQuestionResult(bool yes) {
+        if (yes) {
+            PopUpManager.NewMessage(End).Show("That was a mistake");
+        }
+        else {
+            PopUpManager.NewMessage(End).Show("I'm going to take it anyway");
+        }
+    }
+
+    public void End(bool IGNORE) {
+        //Write this function to finish the game, this is triggered by the messgage box
+        //You can ignore the parameter im just too lazy right now to remove it!
     }
 }

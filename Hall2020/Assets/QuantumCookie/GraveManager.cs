@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GraveManager : MonoBehaviour
 {
     public string[] names;
-
+    private int fixedParts = 0;
 
     public List<Item> items;
     private List<Item> collectedItems;
@@ -87,6 +87,12 @@ public class GraveManager : MonoBehaviour
     {
         currentItem = null;
         UpdateDonorsDisplay();
+        fixedParts++;
+
+        if (fixedParts == 7) {
+            //Monster is fully Fixed
+            GameManager.Instance.FinalDialogue();
+        }
     }
 
     private void Shuffle(string[] arr)
